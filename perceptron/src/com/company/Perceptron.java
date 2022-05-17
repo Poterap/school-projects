@@ -72,11 +72,8 @@ public class Perceptron {
             }
         }
         for (int i = 0; i < v.length; i++) {
-//            char c1 = (char) (i+65);
             v[i]=v[i]/count;
-//            System.out.println(c1+" "+v[i]);
         }
-//        System.out.println("a"+count);
         return v;
     }
 

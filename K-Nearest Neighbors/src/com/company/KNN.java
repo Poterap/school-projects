@@ -19,7 +19,6 @@ public class KNN {
     }
 
     private void test(String test) {
-        ArrayList<Neighbour> neighbourArrayList = new ArrayList<>();
         int x = 0;
         try {
             FileReader testFileReader = new FileReader(test);
@@ -84,10 +83,6 @@ public class KNN {
                 }
                 elements = list.size();
             }
-
-//            map.entrySet().forEach(entry -> {
-//                System.out.println(entry.getKey()+" - "+ entry.getValue().toString());
-//            });
 
         } catch (IOException e) {
             e.printStackTrace();

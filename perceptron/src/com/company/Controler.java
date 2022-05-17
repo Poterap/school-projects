@@ -9,12 +9,7 @@ public class Controler {
 
     public Controler(View view, ArrayList<Perceptron> perseptrons) {
 
-        view.cbutton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.ta.setText("");
-            }
-        });
+        view.cbutton.addActionListener(e -> view.ta.setText(""));
 
         view.button.addActionListener(new ActionListener() {
             Perceptron win=null;
@@ -23,11 +18,8 @@ public class Controler {
             public void actionPerformed(ActionEvent e) {
                 for (Perceptron perseptron : perseptrons) {
                     try {
-//                        System.out.println(perseptron.getLanguage());
                         double iloczyn = perseptron.use(view.ta.getText());
-//                        System.out.println(perseptron.getProg()+" v "+iloczyn);
                         if (iloczyn >= perseptron.getProg()){
-//                            System.out.println(perseptron.getLanguage());
                             if (win==null){
                                 win=perseptron;
                                 net= iloczyn- perseptron.getProg();
@@ -43,13 +35,6 @@ public class Controler {
                     }
                 }
                 if (win==null){
-
-//                    for (Perceptron perseptron : perseptrons) {
-//                        double iloczyn = perseptron.use(view.ta.getText());
-//                        if (net<iloczyn - perseptron.getProg()){
-//
-//                        }
-//                    }
 
                     System.out.println("nie rozpoznano");
                     view.jLabel.setText("nie rozpoznano");

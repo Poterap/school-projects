@@ -16,7 +16,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 	Path trainDirectory = Paths.get("C:\\Studia\\NAI\\projekt2_NAI\\train");
-//	Files.walkFileTree(trainDirectory, new MySimpleFileVisitorImpl());
         Files.walkFileTree(trainDirectory, new SimpleFileVisitor<>(){
             Perceptron p;
 
@@ -32,7 +31,6 @@ public class Main {
 
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-    //                System.out.println(p.getLanguage()+" "+file.getFileName());
                 if (map.containsKey(file.getParent().getFileName().toString())){
                     map.get(file.getParent().getFileName().toString()).add(file);
                 }
@@ -46,7 +44,6 @@ public class Main {
         for (int l = 0; l < 35; l++) {
             System.out.println("------------------");
             for (Map.Entry<String, List<Path>> entry : map.entrySet()) {
-//                System.out.println(entry.getKey() + ":" + entry.getValue());
                 for (int i = 0; i < perseptrons.size(); i++) {
                     int d;
                     if (perseptrons.get(i).getLanguage().equals(entry.getKey()))
@@ -54,7 +51,6 @@ public class Main {
                     else
                         d=0;
                     for (int j = 0; j < entry.getValue().size(); j++) {
-//                        System.out.println(entry.getKey());
                         perseptrons.get(i).train(entry.getValue().get(i), d);
                     }
                 }

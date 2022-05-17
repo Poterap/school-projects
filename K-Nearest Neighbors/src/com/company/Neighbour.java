@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Comparator;
-
 public class Neighbour implements Comparable<Neighbour> {
     private String name;
     private double distance;

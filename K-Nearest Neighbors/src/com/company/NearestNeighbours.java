@@ -32,10 +32,6 @@ public class NearestNeighbours {
 
 
     public String result() {
-//        System.out.println("wynik:");
-//        for (int i = 0; i < neighbourTab.length; i++) {
-//            System.out.println(neighbourTab[i]);
-//        }
 
         Map<String, Integer> map = new HashMap<String, Integer>();
         for (int i = 0; i < neighbourTab.length; i++) {
@@ -54,7 +50,6 @@ public class NearestNeighbours {
                 if (max < value)
                     ans = key;
                     max = value; });
-//        System.out.println(ans);
         return ans;
         }
     }
